@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    container_name: flask
+    restart: always
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app :/usr/src/app
+    working_dir: /usr/src
+    command: python app.py
+
+  db:
+    image: mongo:latest
+    container_name: db
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: flaskdb
