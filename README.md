@@ -26,3 +26,6 @@ Para iniciar o projeto usaremos a estrutura de produção em Docker Compose.
 	docker-compose up -d
 
 	```
+
+## Documentação Simplificada
+[Wiki github](https://github.com/monterxto/Flask-RESTful-API-Hoteis.wiki.git)
